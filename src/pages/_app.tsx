@@ -1,8 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-
 import React from 'react';
+
 import Layout from '../components/layout/Layout';
+import Providers from '../providers';
+
+import '../assets/css/styles.css';
 
 export interface IAppProps extends AppProps {}
 
@@ -15,10 +18,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
       </Head>
-      <Layout>
-        <Component {...pageProps} />;
-      </Layout>
+      <Providers>
+        <Layout>
+          <Component {...pageProps} />;
+        </Layout>
+      </Providers>
     </React.Fragment>
   );
 };

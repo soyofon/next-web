@@ -2,13 +2,18 @@ import React from 'react';
 import { InitialProps } from '../../interfaces/props';
 import Header from './Header';
 import Footer from './Footer';
+import Breadcrumbs from './BreadCrumbs';
+import { Box } from '@material-ui/core';
 
 const Layout = ({ children }: InitialProps) => (
-  <div>
+  <Box p={0} m={0}>
     <Header />
-    {children}
+    <Box>
+      <Breadcrumbs />
+      {children}
+    </Box>
     <Footer />
-  </div>
+  </Box>
 );
 
 export default Layout;
