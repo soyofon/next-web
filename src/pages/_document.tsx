@@ -7,7 +7,7 @@ import Document, {
   DocumentContext
 } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
-import theme from '../theme';
+import theme from '../utils/theme';
 
 const CustomDocument = () => {
   return (

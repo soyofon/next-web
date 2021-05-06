@@ -1,11 +1,17 @@
 import React from 'react';
 import { InitialProps } from '../interfaces/props';
 import MuiProvider from './material-ui';
+import ReduxProvider from './redux';
 
-const Providers = ({ children }: InitialProps) => {
-  return <MuiProvider>{children}</MuiProvider>;
-};
+const Providers = combineProviders(ReduxProvider, MuiProvider);
 
-export const combineProvider = (...providers: React.FC[]) => {};
+function combineProviders(...providers: React.FC[]) {
+  return ({ children }: InitialProps) => {
+    return providers.reduce(
+      (child, Provider) => <Provider>{child}</Provider>,
+      children
+    );
+  };
+}
 
 export default Providers;

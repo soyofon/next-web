@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/dist/client/router';
-import { RouterConfig, RouterOptionsWithPath, routes } from '../router';
+import { RouterConfig, RouterOptionsWithPath, routes } from '../utils/router';
 
 export const useBreadcrumbs = () => {
   const router = useRouter();
