@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Providers>
         <Layout>
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
         </Layout>
       </Providers>
     </React.Fragment>
