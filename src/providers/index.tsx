@@ -6,10 +6,16 @@ import ReduxProvider from './redux';
 const Providers = combineProviders(ReduxProvider, MuiProvider);
 
 function combineProviders(...providers: React.FC[]) {
-  return ({ children }: InitialProps) => {
-    return providers.reduce(
-      (child, Provider) => <Provider>{child}</Provider>,
-      children
+  return ({ children }: InitialProps): JSX.Element => {
+    return (
+      <>
+        {providers.reduce(
+          (child, Provider) => (
+            <Provider>{child}</Provider>
+          ),
+          children
+        )}
+      </>
     );
   };
 }

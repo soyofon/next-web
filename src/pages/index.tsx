@@ -7,7 +7,7 @@ const IndexPage = () => {
   const { data: users = [], mutate: loadUsers } = useService(
     userModule.GET_USERS
   );
-  const { loading: postLoadState, mutate: addUser } = useService(
+  const { loading: postLoad, mutate: addUser } = useService(
     userModule.POST_ADD_USER
   );
 
@@ -18,10 +18,10 @@ const IndexPage = () => {
   }, []);
 
   React.useEffect(() => {
-    if (!postLoadState) {
+    if (!postLoad) {
       loadUsers();
     }
-  }, [postLoadState]);
+  }, [postLoad]);
 
   return (
     <main>

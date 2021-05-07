@@ -22,7 +22,6 @@ const reducer = (
   state = initState,
   actions: { type: string; payload?: any }
 ) => {
-  console.log(actions);
   switch (actions.type) {
     case 'FETCH_DATA':
       return { ...state, data: actions.payload, loading: false };
